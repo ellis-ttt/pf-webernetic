@@ -1,0 +1,15 @@
+@use "sass:list";
+
+$screen-sizes: 0px, 845px, 1600px, 2000px, 99999px;
+
+@mixin responsive($attribute, $values...) {
+  @for $i from 0 to length($values) {
+    @media screen and (min-width: list.nth(
+                        $screen-sizes, $i + 1
+        )) and (max-width: list.nth(
+                        $screen-sizes, $i + 2
+        )) {
+      #{$attribute}: #{list.nth($values, $i + 1)};
+    }
+  }
+}

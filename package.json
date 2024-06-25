@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "build": "bun run format && tsc && vite build --base=/pf-webernetic/",
+    "format": "prettier --write src/"
   },
   "devDependencies": {
+    "@types/node": "^20.14.8",
     "prettier": "^3.3.2",
     "sass": "^1.77.6",
     "typescript": "^5.5.2",
